@@ -6,6 +6,7 @@
 var passport = require('passport'),
 	url = require('url'),
   //users = require('../../controllers/users.server.controller'),
+  User = require('mongoose').model('User'),
   FacebookTokenStrategy = require('passport-facebook-token').Strategy;
 
 module.exports = function(config) {
