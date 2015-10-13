@@ -1,0 +1,121 @@
+h2 {
+  font-weight: 300;
+  font-size: 28px;
+}
+.content {
+  color: black;
+}
+.content > section {
+  padding-top: 0em;
+}
+#map_canvas {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+#map_canvas {
+  position: relative;
+}
+.angular-google-map-container {
+  position: relative;
+  min-height: 200px;
+  height: 100%;
+  width: 100%;
+}
+.navbar-inverse {
+  background-color: #00aeef;
+  color: #fff;
+}
+.navbar-inverse .btn-link,
+.navbar-inverse .navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-inverse .navbar-link {
+  color: #fff;
+  padding-top: 20px;
+  font-weight: 300;
+}
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-inverse .navbar-text {
+  color: #fff;
+}
+.navbar-header .navbar-brand {
+  padding-top: 5px;
+}
+.navbar-header .navbar-brand img {
+  height: 40px;
+}
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    padding-top: 20px;
+  }
+}
+.ui-gmap-google-map {
+  width: 100%;
+  min-height: 200px;
+}
+.google-map-search-box {
+  left: 40px !important;
+  width: 90% !important;
+  display: block;
+  top: 4px !important;
+  height: 40px !important;
+  font-size: 16px;
+}
+.home-list .list-item {
+  margin-bottom: 15px;
+  display: block;
+}
+.home-list .list-item img {
+  width: 100%;
+  height: 200px !important;
+}
+.founds-banner {
+  padding: 15px 0;
+  background: #f5f7fa;
+  border-radius: 4px;
+  border-color: black;
+}
+.level-container {
+  position: absolute;
+  left: 51px;
+  top: 30px;
+  font-size: 11px;
+}
+.m-results-business-expanded-section .dayCol,
+.m-results-business-expanded-section .divCol,
+.m-results-business-expanded-section .hourCol {
+  float: left;
+}
+.m-results-business-expanded-section .dayCol {
+  width: 30px;
+}
+.m-results-business-expanded-section .openingHoursContainer {
+  width: 100%;
+  display: block;
+  float: left;
+}
+.m-results-business-expanded-section .is-today {
+  font-weight: bold;
+}
+/*
+.landing > section {
+   padding-top: 0em;
+}
+*/
+.footer {
+  padding-top: 1em !important;
+  border-radius: 0 !important;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.footer > .row {
+  margin: 0 auto;
+}
+ul.dropdown {
+  position: fixed;
+  width: 100%;
+}
+.pet-actions-container button {
+  width: 100%;
+  margin-bottom: 15px;
+}
