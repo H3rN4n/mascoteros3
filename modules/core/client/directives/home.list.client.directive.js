@@ -8,7 +8,7 @@ angular.module('core').directive("homeList", [function () {
             limit: "=?",
             entityUrl: "="
         },
-        templateUrl: 'modules/core/views/partials/home-list-directive-client-view.html',
+        templateUrl: '/modules/core/client/views/partials/home-list-directive-client-view.html',
         restrict: 'E',
         replace: true,
         link: function (scope, element, attributes) {

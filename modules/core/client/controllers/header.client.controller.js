@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', '$element', '$timeout', '$state', 'Authentication', 'Menus', '$rootScope', 'Facebook',
-  function ($scope, $element, $timeout, $state, Authentication, Menus, $rootScope, Facebook) {
+angular.module('core').controller('HeaderController', ['$scope', '$element', '$timeout', '$state', 'Authentication', 'Menus', '$rootScope', /*'Facebook',*/
+  function ($scope, $element, $timeout, $state, Authentication, Menus, $rootScope/*, Facebook*/) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
@@ -24,7 +24,7 @@ angular.module('core').controller('HeaderController', ['$scope', '$element', '$t
     });
 
     // Collapsing the menu after navigation
-    $scope.$on('$stateChangeSuccess', function() {
+    /*$scope.$on('$stateChangeSuccess', function() {
       $scope.isCollapsed = false;
       Facebook.init({
         appId      : '1414293935539684',
@@ -32,7 +32,7 @@ angular.module('core').controller('HeaderController', ['$scope', '$element', '$t
         xfbml      : true,
         version    : 'v2.3' // or v2.0, v2.1, v2.0
       });
-    });
+    });*/
 
     var hideOffset = 60,
         scrollposition = 0,
