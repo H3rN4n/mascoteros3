@@ -12,19 +12,19 @@ angular.module('vets').config(['$stateProvider',
 		}).
 		state('vets.list', {
 			url: '',
-			templateUrl: 'modules/vets/views/list-vets.client.view.html'
+			templateUrl: 'modules/vets/client/views/list-vets.client.view.html'
 		}).
 		state('vets.create', {
 			url: '/create',
-			templateUrl: 'modules/vets/views/create-vet.client.view.html'
+			templateUrl: 'modules/vets/client/views/create-vet.client.view.html'
 		}).
 		state('vets.view', {
 			url: '/:vetId',
-			templateUrl: 'modules/vets/views/view-vet.client.view.html'
+			templateUrl: 'modules/vets/client/views/view-vet.client.view.html'
 		}).
 		state('vets.edit', {
 			url: '/:vetId/edit',
-			templateUrl: 'modules/vets/views/edit-vet.client.view.html'
+			templateUrl: 'modules/vets/client/views/edit-vet.client.view.html'
 		});
 	}
 ]);

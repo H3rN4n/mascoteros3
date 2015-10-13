@@ -3,7 +3,7 @@
 angular.module('pets').directive('vetList',  ['$location',
 	function($location) {
 		return {
-			templateUrl: 'modules/pets/views/partials/vet-list.client.view.html',
+			templateUrl: 'modules/pets/client/views/partials/vet-list.client.view.html',
 			restrict: 'E',
 			replace: true,
 			link: function postLink(scope, element, attrs) {

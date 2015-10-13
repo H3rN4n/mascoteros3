@@ -5,11 +5,14 @@ module.exports = {
     lib: {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css'
+        'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+        'public/lib/angular-datepicker/dist/angular-datepicker.min.css'
       ],
       js: [
+        'public/lib/lodash/lodash.min.js',
         'public/lib/angular/angular.js',
         'public/lib/angular-resource/angular-resource.js',
+        'public/lib/angular-datepicker/dist/angular-datepicker.min.js',
         'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-messages/angular-messages.js',
         'public/lib/angular-ui-router/release/angular-ui-router.js',
@@ -21,10 +24,9 @@ module.exports = {
         'public/lib/devicejs/lib/device.min.js',
         'public/lib/wowjs/dist/wow.js',
         'public/lib/jquery/dist/jquery.min.js',
-        'public/lib/restangular/dist/restangular.js',
+        'public/lib/restangular/dist/restangular.min.js',
         'public/lib/angularjs-geolocation/dist/angularjs-geolocation.min.js',
         'public/lib/angular-google-maps/dist/angular-google-maps.js',
-        'public/lib/angular-datepicker/dist/index.js',
         'public/lib/ngstorage/ngStorage.js',
         'public/lib/textAngular/dist/textAngular.min.js',
         'public/lib/textAngular/dist/textAngular-rangy.min.js',
