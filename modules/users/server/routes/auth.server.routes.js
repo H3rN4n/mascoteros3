@@ -24,6 +24,7 @@ module.exports = function (app) {
     scope: ['email']
   }));
   app.route('/api/auth/facebook/callback').get(users.oauthCallback('facebook'));
+  //app.route('/api/auth/facebook/validateToken').get(passport.authenticate('facebook-token'));
 
   // Setting the twitter oauth routes
   app.route('/api/auth/twitter').get(users.oauthCall('twitter'));

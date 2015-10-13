@@ -5,14 +5,14 @@
  */
 var passport = require('passport'),
 	url = require('url'),
-    //users = require('../../controllers/users.server.controller'),
     User = require('mongoose').model('User'),
     FacebookTokenStrategy = require('passport-facebook-token').Strategy;
 
 module.exports = function(config) {
   passport.use(new FacebookTokenStrategy({
       clientID: config.facebook.clientID,
-      clientSecret: config.facebook.clientSecret
+      clientSecret: config.facebook.clientSecret,
+      callbackURL: config.facebook.callbackURL
     },
     function(accessToken, refreshToken, profile, done) {
       // Set the provider data and include tokens
