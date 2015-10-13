@@ -2,8 +2,8 @@
 
 // Vets controller
 angular.module('vets')
-		.controller('VetsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Vets', '$timeout', 'geolocation', '$resource',
-	function($scope, $stateParams, $location, Authentication, Vets, $timeout, geolocation, $resource, $http ) {
+		.controller('VetsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Vets', '$timeout', 'geolocation', '$resource', 'lodash',
+	function($scope, $stateParams, $location, Authentication, Vets, $timeout, geolocation, $resource, lodash) {
 		$scope.authentication = Authentication;
 
 		//MAPS
@@ -47,7 +47,7 @@ angular.module('vets')
 		];
 
 		$scope.$watchCollection("marker.coords", function (newVal, oldVal) {
-			if (_.isEqual(newVal, oldVal))
+			if (lodash.isEqual(newVal, oldVal))
 				return;
 			$scope.coordsUpdates++;
 		});

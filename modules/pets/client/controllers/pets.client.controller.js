@@ -14,7 +14,8 @@ angular.module('pets').controller('PetsController', [
 	/*'Notifications',*/
 	'$http',
 	'$timeout',
-	function($scope, $resource, $stateParams, $location, Authentication, Pets, Upload, geolocation, $window, /*Notifications,*/ $http, $timeout) {
+	'lodash',
+	function($scope, $resource, $stateParams, $location, Authentication, Pets, Upload, geolocation, $window, /*Notifications,*/ $http, $timeout, lodash) {
 		$scope.authentication = Authentication;
 
 		// Create new Pet
@@ -162,7 +163,7 @@ angular.module('pets').controller('PetsController', [
 			}
 		};
 		$scope.$watchCollection("marker.coords", function (newVal, oldVal) {
-			if (_.isEqual(newVal, oldVal))
+			if (lodash.isEqual(newVal, oldVal))
 				return;
 			$scope.coordsUpdates++;
 		});
@@ -360,6 +361,6 @@ angular.module('pets').controller('PetsController', [
 				error(function (data, status, headers, config) {
 
 				});
-		}
+		};
 	}
 ]);

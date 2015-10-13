@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').directive('addressGoogleMap', [ 'geolocation', '$timeout', '$log',
-	function(geolocation, $timeout, $log) {
+angular.module('core').directive('addressGoogleMap', [ 'geolocation', '$timeout', '$log', 'lodash',
+	function(geolocation, $timeout, $log, lodash) {
 		return {
 			templateUrl: 'modules/pets/views/partials/address.googlemap.client.view.html',
 			restrict: 'E',
@@ -38,7 +38,7 @@ angular.module('core').directive('addressGoogleMap', [ 'geolocation', '$timeout'
 					}
 				};
 				$scope.$watchCollection("marker.coords", function (newVal, oldVal) {
-					if (_.isEqual(newVal, oldVal))
+					if (lodash.isEqual(newVal, oldVal))
 						return;
 					$scope.coordsUpdates++;
 				});
