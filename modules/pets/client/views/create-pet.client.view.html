@@ -1,0 +1,128 @@
+<section class="container" data-ng-controller="PetsController">
+    <div class="page-header">
+        <h1>Nueva Mascota</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <div class="row" id="step3">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div ng-hide="pet.picture" class="pet-avatar">
+                            <i class="fa fa-paw img-circle"></i>
+                        </div>
+                        <img ng-show="picture" alt="{{name}}" ng-src="{{picture}}" class="">
+                        <label class="control-label" for="name">Foto</label>
+                        <div class="controls">
+                            <!--<input type="text" data-ng-model="picture" id="picture" class="form-control" placeholder="Pic Url" required>-->
+                            <input type="file" fileread="picture" data-ng-model="picture" id="images.name" class="form-control" placeholder="Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="isPrivate">Perfil Privado?</label>
+                        <div class="controls">
+                            <input type="checkbox" data-ng-model="isPrivate" id="isPrivate" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="name">Nombre</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="nombre de la mascota" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="name">Tipo de Mascota</label>
+                        <div class="controls">
+                            <pet-type-selector ng-model="type"></pet-type-selector>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="name">Raza</label>
+                        <div class="controls">
+                            <pet-breed-selector ng-model="breed"></pet-breed-selector>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label class="control-label" for="breed">Raza</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="breed" id="breed" class="form-control" placeholder="Raza" required>
+                        </div>
+                    </div>-->
+                    <div class="form-group">
+                        <label class="control-label" for="color">Color</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="color" id="color" class="form-control" placeholder="Color" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="yearOfBirth" style="float:left;">Fecha de nacimiento</label>
+                        <div class="controls">
+                            <input type="datetime" min-view="date" date-time ng-model="start" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="color">Genero</label>
+                        <div class="controls">
+                            <pet-genre-selector ng-model="genre"></pet-genre-selector>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="neutered">Castrado</label>
+                        <div class="controls">
+                            <input type="checkbox" data-ng-model="neutered" id="neutered" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="isAdoption">En Adopción</label>
+                        <div class="controls">
+                            <input type="checkbox" data-ng-model="isAdoption" id="isAdoption" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="email">Email de contacto</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="email" id="email" class="form-control" placeholder="usuario@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="description">Descripcion o Rasgos de la mascota</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="description" id="description" class="form-control" placeholder="Mancha pata derecha" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        Direccion: {{address}}
+                        <label class="control-label" for="description">Descripcion o Rasgos de la mascota</label>
+                        <div class="controls">
+                            <!--<address-google-map></address-google-map>-->
+                            <script type="text/ng-template" id="searchbox.tpl.html">
+                                <input type="text" class="google-map-search-box" data-ng-model="address" id="address" class="form-control" placeholder="" required>
+                            </script>
+                            <ui-gmap-google-map class="ui-gmap-google-map" center="map.center" zoom="18" draggable="false" options="options">
+                                <ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
+                                <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id"></ui-gmap-marker>
+                            </ui-gmap-google-map>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="tel1">Telefono de contacto</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="tel1" id="tel1" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="tel2">Celular de contacto</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="tel2" id="tel2" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-default">
+                    </div>
+                    <div data-ng-show="error" class="text-danger">
+                        <strong data-ng-bind="error"></strong>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

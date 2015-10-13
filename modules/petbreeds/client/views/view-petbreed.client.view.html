@@ -1,0 +1,19 @@
+<section class="container" data-ng-controller="PetbreedsController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="petbreed.name"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="authentication.user._id == petbreed.user._id">
+		<a class="btn btn-primary" href="/#!/petbreeds/{{petbreed._id}}/edit">
+			<i class="fa fa-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="fa fa-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Pertenece a
+			<span data-ng-bind="petbreed.pettype.name"></span>
+		</em>
+	</small>
+</section>

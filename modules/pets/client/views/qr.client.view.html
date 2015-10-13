@@ -1,0 +1,354 @@
+<div>
+	<style>
+		#id-container section.a {
+			clear: both;
+			border: 0.05cm gray dashed;
+			height: 4cm;
+			width: 6.4cm;
+			margin-bottom: 0.5cm;
+		}
+		#id-container .id-front, #id-container .id-back{
+			width: 2.8cm;
+			height: 3.6cm;
+			background-color: #76c5f0;
+			border: 0.2cm solid black;
+			float: left;
+		}
+		#id-container .id-front-2, #id-container .id-back-2{
+			width: 2.8cm;
+			height: 3.6cm;
+			background-color: #dea5a4;
+			border: 0.2cm solid black;
+			float: left;
+		}
+		#id-container .pin {
+			height: 0.6cm;
+			width: 100%
+		}
+
+		#id-container .pin .circle {
+			width: 0.3cm;
+			height: 0.3cm;
+			background: white;
+			border-radius: 50%;
+			border: 2px solid black;
+			margin: 0.2cm auto 0;
+		}
+
+		#id-container .qr {
+			width: 100%;
+			height: 2cm;
+			background-color: white;
+			text-align: center;
+		}
+
+		#id-container .qr img {
+			height: 2cm;
+			width: 2cm;
+		}
+
+		#id-container .name {
+			width: 100%;
+			height: 0.6cm;
+			font-size: 0.5cm;
+			line-height: 0.8cm;
+			font-family: sans-serif;
+			vertical-align: middle;
+			text-align: center;
+			padding: 0.05cm 0 0;
+			color: white;
+			font-weight: 400;
+			text-transform: uppercase;
+		}
+
+		#id-container .page, #id-container .tel {
+			width: 90%;
+			height: 1.5cm;
+			font-size: 0.25cm;
+			margin: 0 auto;
+			color: white;
+			text-align: center;
+			font-family: sans-serif;
+			line-height: 0.4cm;
+		}
+
+		#id-container .page span {
+			font-weight: bold;
+			text-decoration: underline;
+		}
+
+		#id-container .tel {
+			font-weight: bold;
+		}
+
+		#id-container section.b {
+			clear: both;
+			border: 0.05cm gray dashed;
+			height: 4cm;
+			width: 6.4cm;
+			margin-bottom: 0.5cm;
+		}
+
+		#id-container section.b .page, #id-container section.b .tel {
+			color: black;
+		}
+
+		#id-container section.b .name {
+			width: 100%;
+			height: 0.6cm;
+			font-size: 0.5cm;
+			line-height: 0.8cm;
+			font-family: sans-serif;
+			vertical-align: middle;
+			text-align: center;
+			padding: 0.05cm 0 0;
+			color: black;
+			font-weight: 400;
+		}
+
+		#id-container section.c {
+			clear: both;
+			border: 0.05cm gray dashed;
+			height: 3.2cm;
+			width: 4.8cm;
+			margin-bottom: 0.5cm;
+		}
+
+		#id-container section.c .id-front-2, #id-container section.c .id-back-2{
+			width: 2cm;
+			height: 2.8cm;
+			background-color: #76c5f0;
+			border: 0.2cm solid black;
+			float: left;
+		}
+
+		#id-container section.c .qr {
+			width: 100%;
+			height: 1.5cm;
+			background-color: white;
+			text-align: center;
+		}
+
+		#id-container section.c .qr img {
+			height: 1.5cm;
+			width: 1.5cm;
+		}
+
+		#id-container section.c .page, #id-container section.c .tel {
+			width: 90%;
+			height: 1.5cm;
+			font-size: 0.25cm;
+			margin: 0 auto;
+			color: white;
+			text-align: center;
+			font-family: sans-serif;
+			line-height: 0.4cm;
+		}
+
+		#id-container section.c .page span {
+			font-weight: bold;
+			text-decoration: underline;
+		}
+
+		#id-container section.c .name {
+			width: 100%;
+			height: 0.3cm;
+			font-size: 0.3cm;
+			line-height: 0.5cm;
+			font-family: sans-serif;
+			vertical-align: middle;
+			text-align: center;
+			padding: 0.05cm 0 0;
+			color: white;
+			font-weight: 400;
+		}
+
+		@media print{
+			.id-container section.a {
+				clear: both;
+				border: 0.05cm gray dashed;
+				height: 4cm;
+				width: 6.4cm;
+				margin-bottom: 0.5cm;
+			}
+			.id-container .id-front, .id-container .id-back{
+				width: 2.8cm;
+				height: 3.6cm;
+				background-color: #76c5f0;
+				border: 0.2cm solid black;
+				float: left;
+			}
+			.id-container .id-front-2, .id-container .id-back-2{
+				width: 2.8cm;
+				height: 3.6cm;
+				background-color: #dea5a4;
+				border: 0.2cm solid black;
+				float: left;
+			}
+			.id-container .pin {
+				height: 0.6cm;
+				width: 100%
+			}
+
+			.id-container .pin .circle {
+				width: 0.3cm;
+				height: 0.3cm;
+				background: white;
+				border-radius: 50%;
+				border: 2px solid black;
+				margin: 0.2cm auto 0;
+			}
+
+			.id-container .qr {
+				width: 100%;
+				height: 2cm;
+				background-color: white;
+				text-align: center;
+			}
+
+			.id-container .qr img {
+				height: 2cm;
+				width: 2cm;
+			}
+
+			.id-container .name {
+				width: 100%;
+				height: 0.6cm;
+				font-size: 0.5cm;
+				line-height: 0.8cm;
+				font-family: sans-serif;
+				vertical-align: middle;
+				text-align: center;
+				padding: 0.05cm 0 0;
+				color: white;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+
+			.id-container .page, .id-container .id-container .tel {
+				width: 90%;
+				height: 1.5cm;
+				font-size: 0.25cm;
+				margin: 0 auto;
+				color: white;
+				text-align: center;
+				font-family: sans-serif;
+				line-height: 0.4cm;
+			}
+
+			.id-container .page span {
+				font-weight: bold;
+				text-decoration: underline;
+			}
+
+			.id-container .tel {
+				font-weight: bold;
+			}
+
+			.id-container section.b {
+				clear: both;
+				border: 0.05cm gray dashed;
+				height: 4cm;
+				width: 6.4cm;
+				margin-bottom: 0.5cm;
+			}
+
+			.id-container section.b .page, .id-container section.b .tel {
+				color: black;
+			}
+
+			.id-container section.b .name {
+				width: 100%;
+				height: 0.6cm;
+				font-size: 0.5cm;
+				line-height: 0.8cm;
+				font-family: sans-serif;
+				vertical-align: middle;
+				text-align: center;
+				padding: 0.05cm 0 0;
+				color: black;
+				font-weight: 400;
+			}
+
+			.id-container section.c {
+				clear: both;
+				border: 0.05cm gray dashed;
+				height: 3.2cm;
+				width: 4.8cm;
+				margin-bottom: 0.5cm;
+			}
+
+			.id-container section.c .id-front-2, .id-container section.c .id-back-2{
+				width: 2cm;
+				height: 2.8cm;
+				background-color: #76c5f0;
+				border: 0.2cm solid black;
+				float: left;
+			}
+
+			.id-container section.c .qr {
+				width: 100%;
+				height: 1.5cm;
+				background-color: white;
+				text-align: center;
+			}
+
+			.id-container section.c .qr img {
+				height: 1.5cm;
+				width: 1.5cm;
+			}
+
+			.id-container section.c .page, .id-container section.c .tel {
+				width: 90%;
+				height: 1.5cm;
+				font-size: 0.25cm;
+				margin: 0 auto;
+				color: white;
+				text-align: center;
+				font-family: sans-serif;
+				line-height: 0.4cm;
+			}
+
+			.id-container section.c .page span {
+				font-weight: bold;
+				text-decoration: underline;
+			}
+
+			.id-container section.c .name {
+				width: 100%;
+				height: 0.3cm;
+				font-size: 0.3cm;
+				line-height: 0.5cm;
+				font-family: sans-serif;
+				vertical-align: middle;
+				text-align: center;
+				padding: 0.05cm 0 0;
+				color: white;
+				font-weight: 400;
+			}
+		}
+	</style>
+	<section id="id-container" class="c" style="  margin-left: 40px;margin-bottom: 20px;">
+		<article class="id-front-2" ng-class="{'female': pet.genre.name == 'Hembra'}">
+			<div class="pin">
+				<div class="circle"></div>
+			</div>
+			<div class="qr-container">
+				<img class="qr" ng-src="/api/qr/{{pet.slug}}" alt=""/>
+			</div>
+			<!--<div class="qr" ng-bind-html="svg"></div>-->
+			<div class="name" ng-bind="pet.name"></div>
+		</article>
+		<article class="id-back-2" ng-class="{'female': pet.genre.name == 'Hembra'}">
+			<div class="pin">
+				<div class="circle"></div>
+			</div>
+			<div class="page">
+				mascoteros.net<br/>/pet/<br/><span>{{pet.slug}}</span>
+			</div>
+			<div class="tel" ng-show="pet.tel1 && !pet.tel2">{{pet.tel1}}</div>
+			<div class="tel" ng-show="pet.tel2">{{pet.tel2}}</div>
+		</article>
+	</section>
+
+</div>

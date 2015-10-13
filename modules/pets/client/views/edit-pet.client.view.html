@@ -1,0 +1,84 @@
+<section class="container" data-ng-controller="PetsController"  data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>{{pet.name}}</h1>
+        <a class="btn btn-primary" data-ng-click="remove();">
+            <i class="fa fa-trash"></i> Eliminar perfíl
+        </a>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center">
+                    <label class="control-label" for="">Foto</label>
+                    <br/><br/>
+                    <img ng-if="pet.picture" alt="{{pet.name}}" ng-src="{{pet.picture | cloudinaryProfile}}" class="">
+                    <br/><br/>
+                    <div class="controls">
+                        <input type="file"  fileread="pet.picture"  data-ng-model="pet.picture" id="images.name" class="form-control" placeholder="Name" required>
+                    </div>
+                </div>
+                <div class=" col-md-9 col-lg-9 ">
+                    <table class="table table-user-information">
+                        <tbody>
+                            <tr>
+                              <td style="vertical-align: top;">
+                                <label class="control-label" for="">Familia de {{pet.name}}</label>
+                              </td>
+                              <td>
+                                <ul>
+                                  <li ng-repeat="owner in pet.owners">
+                                    {{owner.displayName}}
+                                  </li>
+                                </ul>
+                                <div class="controls">
+                                  <input type="text" data-ng-model="newOwnerEmail" id="" class="form-control" placeholder="usuario@email.com">
+                                </div>
+                                <button ng-click="addOwner($event);">Agregar</button>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td><label class="control-label" for="description">Descripcion o Rasgos de la mascota</label></td>
+                                <td>
+                                    <div class="controls">
+                                        <textarea type="text" data-ng-model="pet.description" id="description" class="form-control" placeholder="Mancha pata derecha" required></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <script type="text/ng-template" id="searchbox.tpl.html">
+                                        <input type="text" class="google-map-search-box" data-ng-model="pet.address" id="address" class="form-control" placeholder="" required>
+                                    </script>
+                                    <ui-gmap-google-map center="pet.coords" zoom="18" draggable="false" options="options">
+                                        <ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
+                                        <ui-gmap-marker coords="pet.coords" options="marker.options" events="marker.events" idkey="marker.id">
+                                        </ui-gmap-marker>
+                                    </ui-gmap-google-map>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="control-label" for="tel2">Celular de contacto</label>
+                                    <input type="text" data-ng-model="pet.tel2" id="tel2" class="form-control" placeholder="">
+                                </td>
+                                <td>
+                                    <label class="control-label" for="tel1">Teléfono de contacto</label>
+                                    <input type="text" data-ng-model="pet.tel1" id="tel1" class="form-control" placeholder="">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <fieldset>
+                <div class="form-group">
+                    <input type="submit" ng-disabled="formBusy" class="btn btn-default mar-bot-40">
+                    <i ng-show="formBusy" class="fa fa-cog fa-spin"></i>
+                </div>
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>
