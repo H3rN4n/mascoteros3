@@ -44,6 +44,9 @@ exports.invokeRolesPolicies = function() {
 		}, {
 			resources: '/api/pettypes/:pettypeId',
 			permissions: '*'
+		}, {
+			resources: '/api/private/pettypes',
+			permissions: '*'
 		}]
 	}, {
 		roles: ['user'],

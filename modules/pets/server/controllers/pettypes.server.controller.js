@@ -107,3 +107,30 @@ exports.hasAuthorization = function(req, res, next) {
 	}
 	next();
 };
+
+exports.petTypesFromArrays = function(req, res) {
+
+	var types = ["Caninos", "Felinos", "Roedores", "Aves", "Peces", "Reptiles", "Anfibios"];
+	var pushed = [];
+
+	types.forEach(function(e, i){
+
+		var petType = new Pettype();
+		petType.name = e;
+		petType.user = req.user;
+
+		petType.save(function(err) {
+			if (err) {
+				return res.status(400).send({
+					message: errorHandler.getErrorMessage(err)
+				});
+			} else {
+				console.log(petType);
+				pushed.push(petType);
+				if(i === types.length - 1){
+					res.jsonp(pushed);
+				}
+			}
+		});
+	});
+};

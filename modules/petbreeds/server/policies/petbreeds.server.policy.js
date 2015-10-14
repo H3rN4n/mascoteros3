@@ -21,10 +21,10 @@ exports.invokeRolesPolicies = function() {
 			resources: '/api/petbreeds/:petbreedId',
 			permissions: '*'
 		}, {
-			resources: '/private/petbreeds/caninos',
+			resources: '/api/private/petbreeds/caninos',
 			permissions: '*'
 		}, {
-			resources: '/private/petbreeds/felinos',
+			resources: '/api/private/petbreeds/felinos',
 			permissions: '*'
 		}]
 	}, {

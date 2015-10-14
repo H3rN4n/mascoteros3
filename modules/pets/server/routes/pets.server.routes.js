@@ -75,6 +75,9 @@ module.exports = function(app) {
 		.put(pettypes.update)
 		.delete(pettypes.delete);
 
+	app.route('/api/private/pettypes').all(petsPolicy.isAllowed)
+		.get(pettypes.petTypesFromArrays);
+
 
 	// Finish by binding the pet middleware
 	app.param('petId', pets.petByID);
