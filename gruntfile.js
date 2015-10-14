@@ -77,9 +77,9 @@ module.exports = function (grunt) {
       dev: {
         script: 'server.js',
         options: {
-          nodeArgs: [''],
-          ext: 'js,html'//vvv,
-          //watch: _.union(defaultAssets.server.gruntConfig, defaultAssets.server.views, defaultAssets.server.allJS, defaultAssets.server.config)
+          nodeArgs: ['--debug'],
+          ext: 'js,html',
+          watch: _.union(defaultAssets.server.gruntConfig, defaultAssets.server.views, defaultAssets.server.allJS, defaultAssets.server.config)
         }
       }
     },
@@ -296,6 +296,6 @@ module.exports = function (grunt) {
   // Run the project in production mode
   grunt.registerTask('prod', ['build', 'env:prod', 'mkdir:upload', 'copy:localConfig', 'concurrent:default']);
 
-  grunt.registerTask('heroku:development', ['env:dev', 'lint', 'mkdir:upload', 'copy:localConfig', 'concurrent:debug']);
-  grunt.registerTask('heroku:production', ['build', 'env:prod', 'mkdir:upload', 'copy:localConfig', 'concurrent:default']);
+  grunt.registerTask('heroku:development', ['env:dev', 'lint', 'mkdir:upload', 'copy:localConfig', 'concurrent:default']);
+  grunt.registerTask('heroku:production', ['build', 'env:prod', 'mkdir:upload', 'copy:localConfig']);
 };
